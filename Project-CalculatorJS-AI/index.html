@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121b">
+  <title>Nova — Kalkulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">n</div>
+        <div>
+          <p class="brand-name">nova<span class="brand-dot">.</span></p>
+          <p class="brand-caption">Kalkulator cerdas</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span class="keyboard-hint">Gunakan keyboard Anda</span>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Ganti tema" title="Ganti tema">
+          <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <section class="calculator" aria-label="Kalkulator">
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <div class="expression" id="expression"></div>
+          <output class="result" id="result">0</output>
+        </div>
+        <div class="keypad" id="keypad">
+          <button class="key utility" type="button" data-action="clear" aria-label="Hapus semua">AC</button>
+          <button class="key utility" type="button" data-action="sign" aria-label="Ubah tanda">+/−</button>
+          <button class="key utility" type="button" data-action="percent" aria-label="Persen">%</button>
+          <button class="key operator" type="button" data-operator="/" aria-label="Bagi">÷</button>
+
+          <button class="key" type="button" data-digit="7">7</button>
+          <button class="key" type="button" data-digit="8">8</button>
+          <button class="key" type="button" data-digit="9">9</button>
+          <button class="key operator" type="button" data-operator="*" aria-label="Kali">×</button>
+
+          <button class="key" type="button" data-digit="4">4</button>
+          <button class="key" type="button" data-digit="5">5</button>
+          <button class="key" type="button" data-digit="6">6</button>
+          <button class="key operator" type="button" data-operator="-" aria-label="Kurang">−</button>
+
+          <button class="key" type="button" data-digit="1">1</button>
+          <button class="key" type="button" data-digit="2">2</button>
+          <button class="key" type="button" data-digit="3">3</button>
+          <button class="key operator" type="button" data-operator="+" aria-label="Tambah">+</button>
+
+          <button class="key utility" type="button" data-action="backspace" aria-label="Hapus satu angka">⌫</button>
+          <button class="key" type="button" data-digit="0">0</button>
+          <button class="key" type="button" data-action="decimal" aria-label="Koma">,</button>
+          <button class="key equals" type="button" data-action="equals" aria-label="Sama dengan">=</button>
+        </div>
+      </section>
+
+      <aside class="history" aria-label="Riwayat perhitungan">
+        <div class="history-heading">
+          <h2 class="history-title">Riwayat</h2>
+          <button class="clear-history" id="clear-history" type="button">Hapus</button>
+        </div>
+        <div class="history-list" id="history-list">
+          <div class="history-empty"><span aria-hidden="true">◷</span><span>Hasil hitunganmu akan muncul di sini</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <p class="footer-note">Tip: tekan <kbd>Enter</kbd> untuk menghitung · <kbd>Esc</kbd> untuk menghapus</p>
+    <p class="sr-only" id="status" role="status"></p>
+  </main>
+
+  <script src="input.js" defer></script>
+</body>
+</html>
